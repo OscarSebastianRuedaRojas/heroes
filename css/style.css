@@ -172,3 +172,20 @@ dialog button{
 .containerDc{
     display: none;
 }
+.containerDc h2{
+    color: var(--colorDc);
+}
+.containerDc .rojo{
+    background-color: var(--colorDc);
+}
+.containerDc article:hover{
+    box-shadow: var(--colorDc) 5px 5px 10px;
+    transform: scale(1.05);
+}
+.containerDc  button::before {
+    background: linear-gradient(
+      82.3deg,
+      var(--colorDc) 10.8%,
+      var(--colorSecundary) 94.3%
+    );
+  }

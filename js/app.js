@@ -16,7 +16,13 @@ const container = document.querySelector(".containerMarvel");
 const container2 = document.querySelector(".containerDc");
 const logoMarvel = document.querySelector("#logoMarvel");
 const logoDc = document.querySelector("#logoDc");
-//Creaacion de cards
+//
+/**
+ * Creaacion de cards
+ * @param {string} picture 
+ * @param {string} name 
+ * @returns 
+ */
 const crearTarjeta = (picture, name)=>{
     const card = document.createElement("article");
     const img = document.createElement("img");
@@ -38,7 +44,13 @@ const crearTarjeta = (picture, name)=>{
     card.appendChild(div2);
     return card
 }
-//Creacion de Dialog
+/**
+ * Creacion de Dialog
+ * @param {string} name 
+ * @param {string} picture 
+ * @param {string} about 
+ * @returns 
+ */
 const preview = (name, picture, about) =>{
   const blur = document.createElement("section")
   blur.setAttribute("class", "blurname");
@@ -62,9 +74,8 @@ const preview = (name, picture, about) =>{
   blur.appendChild(dialog);
   return blur
 }
-//Invocacion del Dialog
 /**
- * 
+ * Invocacion del Dialog
  * @param {Array} heroes 
  */
 const createButton = (heroes) =>{
@@ -78,6 +89,8 @@ const createButton = (heroes) =>{
         console.log("Ya existe un dialog");
       }
       else{
+        console.log(ind);
+        console.log(name);
         let dialog = preview(heroes[ind].name , heroes[ind].picture , heroes[ind].about)
         dialog.open
         document.body.appendChild(dialog)
@@ -97,7 +110,9 @@ heroes.dc.forEach(heroe =>{
     let elementCreado = crearTarjeta(heroe.picture, heroe.name);
     container2.appendChild(elementCreado)
 })
-//Eliminacion de Dialogs
+/**
+ * Eliminacion de Dialogs
+ */
 const deletePreview = () =>{
   const closes = document.querySelector(".tal")
         closes.addEventListener('click', () =>{
@@ -107,7 +122,12 @@ const deletePreview = () =>{
           })
 }
 createButton(heroes.marvel);
-//Funcion Para cambio de franquisia
+/**
+ * Funcion Para cambio de franquisia
+ * @param {object} logo 
+ * @param {object} container 
+ * @param {object} container2 
+ */
 const cambioFranquisia = (logo, container, container2)=>{
   logo.addEventListener('click',()=>{
     if (container.style.display !=='none'){
