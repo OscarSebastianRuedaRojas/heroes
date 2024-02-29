@@ -1,7 +1,7 @@
 //Importacion del archivo Json
 const fetchData = async () =>{
   try{
-    const res = await fetch("../storage/data/heroes.json")
+    const res = await fetch("storage/data/heroes.json")
     if (!res.ok){
       throw new error('Nope');
     }
