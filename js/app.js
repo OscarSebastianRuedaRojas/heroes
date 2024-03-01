@@ -138,21 +138,17 @@ const cambioFranquisia = (logo, container, container2)=>{
       container.style.display = 'none'
       container2.style.display = 'grid'
     }
-    if (container.style.display !=='none'){
-      createButton(heroes.marvel);
-    }else{
-      createButton(heroes.dc);
-    }
+    container.style.display !=='none' ? createButton(heroes.marvel) : createButton(heroes.dc)
   })
 }
 cambioFranquisia(logoMarvel, container2, container);
 cambioFranquisia(logoDc, container, container2);
 lupa.addEventListener('click', ()=>{
-  search.style.width = '220px'
+  search.style.width = '9rem'
 });
-const searchCard = (heroes)=>{
+const searchCard = ()=>{
   let busqueda = search.value.toLowerCase();
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => card.id.toLowerCase().includes(busqueda) ? card.style.display = '' : card.style.display = 'none')
 }
-search.addEventListener('input', ()=> searchCard(heroes))
+search.addEventListener('input', ()=> searchCard())
