@@ -23,6 +23,20 @@ header picture img{
 header #logoDc img{
     width: 4%;
 }
+header .search{
+    position: absolute;
+    top: 1rem;
+    right: 0.5rem;
+    margin: auto;
+}
+.search #inputSearch{
+    width: 0px;
+    transition: all 2s ease;
+    
+}
+.search i{
+    color: var(--colorLetter);
+}
 .container{
     padding: 1rem;
     display: grid;

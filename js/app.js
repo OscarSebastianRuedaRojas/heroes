@@ -143,3 +143,8 @@ const cambioFranquisia = (logo, container, container2)=>{
 }
 cambioFranquisia(logoMarvel, container2, container);
 cambioFranquisia(logoDc, container, container2);
+let lupa = document.querySelector(".bx-search-alt-2");
+const search = document.querySelector('#inputSearch')
+lupa.addEventListener('click', ()=>{
+  search.style.width = '220px'
+})
