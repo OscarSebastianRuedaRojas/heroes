@@ -38,6 +38,7 @@ header .search {
 }
 .search i{
     color: var(--colorLetter);
+    cursor: pointer;
 }
 .container{
     margin: 1rem;
