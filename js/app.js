@@ -16,6 +16,8 @@ const container = document.querySelector(".containerMarvel");
 const container2 = document.querySelector(".containerDc");
 const logoMarvel = document.querySelector("#logoMarvel");
 const logoDc = document.querySelector("#logoDc");
+const lupa = document.querySelector(".bx-search-alt-2");
+const search = document.querySelector('#inputSearch');
 //
 /**
  * Creaacion de cards
@@ -28,6 +30,8 @@ const crearTarjeta = (picture, name)=>{
     const img = document.createElement("img");
     const div = document.createElement("div");
     const div2 = document.createElement("div");
+    card.setAttribute("id", name);
+    card.setAttribute("class", "card")
     div.classList.add("rojo")
     div2.classList.add("cajita") 
     img.src = picture;
@@ -143,8 +147,12 @@ const cambioFranquisia = (logo, container, container2)=>{
 }
 cambioFranquisia(logoMarvel, container2, container);
 cambioFranquisia(logoDc, container, container2);
-let lupa = document.querySelector(".bx-search-alt-2");
-const search = document.querySelector('#inputSearch')
 lupa.addEventListener('click', ()=>{
   search.style.width = '220px'
-})
+});
+const searchCard = (heroes)=>{
+  let busqueda = search.value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => card.id.toLowerCase().includes(busqueda) ? card.style.display = '' : card.style.display = 'none')
+}
+search.addEventListener('input', ()=> searchCard(heroes))

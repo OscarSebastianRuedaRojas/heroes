@@ -38,7 +38,8 @@ header .search{
     color: var(--colorLetter);
 }
 .container{
-    padding: 1rem;
+    margin: 1rem;
+    margin-left: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     column-gap: 1rem;
